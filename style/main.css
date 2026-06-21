@@ -1,0 +1,381 @@
+/**
+ * =============================================================================
+ * This is the file where all your styling should go in.
+ * Instead of modifying the styles found in the monogatari.css file or others,
+ * you should overwrite those styles in this file.
+ *
+ * The CSS selectors shown are not an extensive list but they are the most
+ * common you might want to change. To find what other elements are available,
+ * you can take a look at the monogatari.css file or use your browser's dev
+ * tools to inspect the elements.
+ * =============================================================================
+**/
+
+/**
+ * ===========================
+ * General Styling
+ * ===========================
+**/
+
+@font-face {
+	font-family: 'SourceHanSansSC';
+	src: url('../assets/fonts/SourceHanSansSC-Regular.otf') format('opentype');
+	font-display: swap;
+}
+
+/* General Style */
+body {
+	font-family: 'SourceHanSansSC', 'Outfit', 'Inter', sans-serif;
+}
+
+/* Simple Button styles*/
+button {
+
+}
+
+/* Simple Button Style on Hover */
+button:hover {
+
+}
+
+/* General Styling for Menu Screens */
+[data-screen] {
+
+}
+
+/**
+ * ===========================
+ * Main Menu Styling
+ * ===========================
+**/
+
+/* Main Menu Styling */
+[data-screen="main"], gallery-screen {
+	background-image: url('../assets/ui/ui.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+gallery-screen {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 40px 20px;
+	overflow-y: auto;
+	box-sizing: border-box;
+}
+
+.gallery-container {
+	width: 90%;
+	max-width: 1200px;
+	margin: 0 auto;
+	background: rgba(0, 0, 0, 0.6);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 16px;
+	padding: 30px;
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+	text-align: center;
+}
+
+.gallery-title {
+	font-family: 'Outfit', 'Inter', sans-serif;
+	font-size: 2.5rem;
+	color: #fff;
+	text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+	margin-top: 0;
+	margin-bottom: 30px;
+	letter-spacing: 2px;
+}
+
+.gallery-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 20px;
+	justify-content: center;
+	align-items: center;
+}
+
+.gallery-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 12px;
+	padding: 10px;
+	transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+	border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.gallery-item:hover {
+	transform: scale(1.05);
+	box-shadow: 0 10px 20px rgba(91, 255, 168, 0.2);
+	border-color: rgba(91, 255, 168, 0.3);
+	cursor: pointer;
+}
+
+.gallery-thumb {
+	width: 100%;
+	aspect-ratio: 16/9;
+	border-radius: 8px;
+	object-fit: cover;
+}
+
+.gallery-item-title {
+	font-size: 0.85rem;
+	color: rgba(255, 255, 255, 0.7);
+	margin-top: 8px;
+	font-family: 'Inter', sans-serif;
+	text-transform: capitalize;
+}
+
+/* Lightbox Modal */
+.gallery-lightbox {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.9);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 9999;
+	cursor: zoom-out;
+	backdrop-filter: blur(5px);
+}
+
+.lightbox-img {
+	max-width: 90%;
+	max-height: 90%;
+	border-radius: 12px;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+	animation: zoomIn 0.3s ease-out;
+}
+
+@keyframes zoomIn {
+	from {
+		transform: scale(0.9);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+/* Back Button styling overrides for Gallery */
+gallery-screen .back-button {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	color: white;
+	padding: 10px 20px;
+	border-radius: 30px;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background 0.3s, transform 0.2s;
+	font-family: 'Inter', sans-serif;
+	z-index: 100;
+}
+
+gallery-screen .back-button:hover {
+	background: rgba(255, 255, 255, 0.25);
+	transform: translateX(-3px);
+}
+
+/* Main Menu Buttons Styling */
+[data-screen="main"] button {
+
+}
+
+/**
+ * ===========================
+ * Save and Load Menus Styling
+ * ===========================
+**/
+
+/* Slots Style */
+[data-component="save-slot"] figure {
+
+}
+
+/* Slot's Image Style */
+[data-component="save-slot"] img {
+
+}
+
+/* Slots Title Style */
+[data-component="save-slot"] figcaption {
+
+}
+
+/* Slots Delete Button Style */
+[data-component="save-slot"] button {
+
+}
+
+/**
+ * ===========================
+ * Game Elements Styling
+ * ===========================
+**/
+
+/* Choice Buttons style */
+[data-component="choice-container"] button {
+
+}
+
+/* Choice Button Style on Hover */
+[data-component="choice-container"] button:hover {
+
+}
+
+/* Text Box styling */
+[data-component="text-box"] {
+
+}
+
+/* Character Name Style */
+[data-ui="who"] {
+
+}
+
+/* Style for Centered Text */
+[data-component="centered-dialog"] {
+
+}
+
+/* Character Images Styles */
+[data-screen="game"] [data-character] {
+	height: 50% !important;
+	bottom: 25% !important;
+}
+
+/* Other Images Styles */
+[data-screen="game"] [data-image] {
+
+}
+
+/**
+ * ===========================
+ * Quick Menu Styling
+ * ===========================
+**/
+
+/* These styles are applied to the Mobile version of the Quick Menu */
+
+/* Quick Menu Style */
+[data-component="quick-menu"] {
+
+}
+
+/* Quick Menu Buttons Style */
+[data-component="quick-menu"] span {
+
+}
+
+/* Quick Menu Buttons Style on Hover */
+[data-component="quick-menu"] span:hover {
+
+}
+
+/* Quick Menu Buttons Icon Style */
+[data-component="quick-menu"] > span > .fa {
+
+}
+
+/**
+ * ===========================
+ * Range Styling
+ * ===========================
+**/
+
+/* Use the background property to set a color for these */
+input[type=range]:focus::-webkit-slider-runnable-track {
+
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+
+}
+
+input[type=range]:focus::-ms-fill-upper {
+
+}
+
+input[type=range]:focus::-ms-fill-lower {
+
+}
+
+input[type=range]::-moz-range-track {
+
+}
+
+input[type=range]::-ms-fill-lower {
+
+}
+
+input[type=range]::-ms-fill-upper {
+
+}
+
+/** Medium Screens, Phablets (601px) **/
+@media screen and (min-width: 37.56255em) {
+	/* Styles for the desktop version of the Quick Menu */
+
+	/* Quick Menu Style */
+	[data-component="quick-menu"] {
+
+	}
+
+	/* Quick Menu Buttons Style */
+	[data-component="quick-menu"] span {
+
+	}
+
+	/* Quick Menu Buttons Style on Hover */
+	[data-component="quick-menu"] span:hover {
+
+	}
+}
+
+/** Medium Devices, Tablets (992px)**/
+@media screen and (min-width: 62em) {
+
+}
+
+/** HD Screen, Large Devices, Wide Screens, Desktop (1200px) **/
+@media screen and (min-width: 75em) {
+
+}
+
+/** Full HD Screen, Large Devices, Wide Screens, Large Desktops (1920px) **/
+@media screen and (min-width: 120em) {
+
+}
+
+/** Retina Screen , Large Devices, Wide Screens(2560px) **/
+@media screen and (min-width: 160em) {
+
+}
+
+/** 4k Screens, Large Devices, Wide Screens (3840px) **/
+@media screen and (min-width: 240em) {
+
+}
+
+/** 5k Screens, Large Devices, Wide Screens (5000px) **/
+@media screen and (min-width: 312.5em) {
+
+}
+
+/** 8k Screens, Large Devices, Wide Screens (8000px) **/
+@media screen and (min-width: 500em) {
+
+}
